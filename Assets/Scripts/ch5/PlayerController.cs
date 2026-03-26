@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         if (transform.position.x < 1 && transform.position.x > -1 && hp.GetComponent<Image>().fillAmount > 0) 
         {
-            hp.GetComponent<Image>().fillAmount += 0.001f;
+            hp.GetComponent<Image>().fillAmount += 0.0015f;
         }
 
         if (hp.GetComponent<Image>().fillAmount <= 0)

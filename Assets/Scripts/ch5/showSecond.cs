@@ -18,11 +18,19 @@ public class showSecond : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hp.GetComponent<Image>().fillAmount>0) { a++; }
+        if(hp.GetComponent<Image>().fillAmount>0) 
+        { a++; }
         Text.text = a/60 + "s";
-        if (a / 60 > 30)
+        if (a/60 >= 30)
         {
-            SceneManager.LoadScene("ch5+6");
+            a=1800;
+            if (Input.GetMouseButtonDown(0))
+            {
+                SceneManager.LoadScene("ch5+6");
+
+            }
+            Text.text = "success(tap to continue)";
+
         }
     }
 }

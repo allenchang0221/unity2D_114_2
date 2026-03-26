@@ -7,8 +7,10 @@ public class isEnd : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject player,ending;
+    bool isEnded = false;
     void Start()
     {
+        isEnded = false;
         Application.targetFrameRate = 60;
     }
 
@@ -19,10 +21,15 @@ public class isEnd : MonoBehaviour
         float d=(player.transform.position-transform.position).magnitude;
         if (d <= rTarget+rPlayer) 
         {
-            ending.transform.position = new Vector3(0, 0, ending.transform.position.z);
+            isEnded=true;
+            ending.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, ending.transform.position.z);
 
         }
-        if (ending.transform.position.x == 0 &&Input.GetMouseButtonDown(0))
+        if (isEnded)
+        {
+            ending.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, ending.transform.position.z);
+        }
+        if (isEnded && Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("ch5+6");
 

@@ -6,7 +6,6 @@ public class playerControl : MonoBehaviour
 {
     public Rigidbody2D rigidbody;
     Animator animation;
-    Animator animation2;
     int a = 0;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +13,6 @@ public class playerControl : MonoBehaviour
         Application.targetFrameRate = 60;
         rigidbody=GetComponent<Rigidbody2D>();
         animation = GetComponent<Animator>();
-        animation2 = GetComponent<Animator>();
         a = 0;
     }
     float isRight = 0;
@@ -49,9 +47,7 @@ public class playerControl : MonoBehaviour
 
         }
         float speedx = Mathf.Abs(rigidbody.velocity.x);
-        float speedy = Mathf.Abs(rigidbody.velocity.y);
         transform.localScale = new Vector3((isRight!=0)?isRight:1, 1, 1);
-        this.animation.speed = speedx;
-        this.animation2.speed = speedy;
+        this.animation.speed = speedx/2;
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class showSecond : MonoBehaviour
@@ -19,6 +20,9 @@ public class showSecond : MonoBehaviour
     {
         if(hp.GetComponent<Image>().fillAmount>0) { a++; }
         Text.text = a/60 + "s";
-
+        if (a / 60 > 30)
+        {
+            SceneManager.LoadScene("ch5+6");
+        }
     }
 }

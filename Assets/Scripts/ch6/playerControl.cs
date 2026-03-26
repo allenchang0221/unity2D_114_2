@@ -6,19 +6,25 @@ public class playerControl : MonoBehaviour
 {
     public Rigidbody2D rigidbody;
     Animator animation;
+    Animator animation2;
     int a = 0;
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60;
         rigidbody=GetComponent<Rigidbody2D>();
-        animation=GetComponent<Animator>();
+        animation = GetComponent<Animator>();
+        animation2 = GetComponent<Animator>();
         a = 0;
     }
     float isRight = 0;
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y < -10 || transform.position.x < -10 || transform.position.x >10)
+        {
+            transform.position=new Vector3(-6.06f, 0.6f, 0f);
+        }
         a++;
         if (Input.GetKey(KeyCode.Space))
         {
@@ -28,21 +34,24 @@ public class playerControl : MonoBehaviour
         {
             this.rigidbody.AddForce(transform.up * 60f);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && a >= 5)
         {
-            isRight = 1f;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            isRight = -1f;
-        }
-        float speed=Mathf.Abs(rigidbody.velocity.x);
-        if(speed<=2f && a>=5){
             a = 0;
-            this.rigidbody.AddForce(transform.right * isRight * 30f);
+            isRight = 1f;
+            this.rigidbody.AddForce(transform.right * isRight * 60f);
+
         }
-        
+        if (Input.GetKey(KeyCode.LeftArrow) && a >= 5)
+        {
+            a = 0;
+            isRight = -1f;
+            this.rigidbody.AddForce(transform.right * isRight * 60f);
+
+        }
+        float speedx = Mathf.Abs(rigidbody.velocity.x);
+        float speedy = Mathf.Abs(rigidbody.velocity.y);
         transform.localScale = new Vector3((isRight!=0)?isRight:1, 1, 1);
-        this.animation.speed = speed;
+        this.animation.speed = speedx;
+        this.animation2.speed = speedy;
     }
 }

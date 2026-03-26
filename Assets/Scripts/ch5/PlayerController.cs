@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x<1 && transform.position.x>-1)
+        if (transform.position.x < 1 && transform.position.x > -1 && hp.GetComponent<Image>().fillAmount > 0) 
         {
             hp.GetComponent<Image>().fillAmount += 0.001f;
         }

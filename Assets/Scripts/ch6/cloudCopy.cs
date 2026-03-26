@@ -11,7 +11,7 @@ public class cloudCopy : MonoBehaviour
         Application.targetFrameRate = 60;
         for (int i = 6; i >= -6; i -= 3)
         {
-            for (int j = 3; j >= -3; j -= 2)
+            for (int j = 3; j >= -3; j -= 4)
             {
                 GameObject go = Instantiate(cloudCopied);
                 cloudCopied.transform.position = new Vector3(i, j, 0);

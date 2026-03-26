@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class isEnd : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class isEnd : MonoBehaviour
         if (d <= rTarget+rPlayer) 
         {
             ending.transform.position = new Vector3(0, 0, ending.transform.position.z);
+
+        }
+        if (ending.transform.position.x == 0 &&Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("ch5+6");
+
         }
     }
 }

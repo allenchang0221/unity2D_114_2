@@ -7,7 +7,7 @@ public class isEnd : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject player,ending;
-    bool isEnded = false;
+    public bool isEnded = false;
     void Start()
     {
         isEnded = false;

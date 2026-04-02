@@ -21,7 +21,7 @@ public class ArrowGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.delta += (Time.deltaTime)*9;
+        this.delta += (Time.deltaTime)*4;
         if (this.delta > this.span && hp.GetComponent<Image>().fillAmount > 0)
         {
             this.delta = 0;

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < 1 && transform.position.x > -1 && hp.GetComponent<Image>().fillAmount > 0) 
+        if (transform.position.x < 1 && transform.position.x > -1 && hp.GetComponent<Image>().fillAmount > 0)
         {
             hp.GetComponent<Image>().fillAmount += 0.001f;
         }
@@ -33,22 +33,22 @@ public class PlayerController : MonoBehaviour
             a = 0;
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Translate(1, 0, 0);
+                transform.Translate(0.5f, 0, 0);
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Translate(-1, 0, 0);
+                transform.Translate(-0.5f, 0, 0);
             }
 
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.Translate(1, 0, 0);
+            transform.Translate(1f, 0, 0);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.Translate(-1, 0, 0);
+            transform.Translate(-1f, 0, 0);
         }
         if (transform.position.x >= 8)
         {
@@ -62,10 +62,10 @@ public class PlayerController : MonoBehaviour
     }
     public void LButton()
     {
-        transform.Translate(-1, 0, 0);
+        transform.Translate(-1f, 0, 0);
     }
     public void RButton()
     {
-        transform.Translate(1, 0, 0);
+        transform.Translate(1f, 0, 0);
     }
 }

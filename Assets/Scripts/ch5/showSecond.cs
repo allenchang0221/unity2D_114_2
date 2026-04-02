@@ -32,5 +32,9 @@ public class showSecond : MonoBehaviour
             Text.text = "success(tap to continue)";
 
         }
+        if(Text.text== "success(tap to continue)")
+        {
+            hp.GetComponent<Image>().fillAmount = 1f;
+        }
     }
 }

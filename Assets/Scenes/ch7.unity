@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138710015}
   - component: {fileID: 138710014}
+  - component: {fileID: 138710016}
   m_Layer: 0
   m_Name: snake
   m_TagString: Untagged
@@ -206,6 +207,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &138710016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138710013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db51ab1fbfb91f4b9a5a2302de46bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 6221606131080315030, guid: 7cd13a551eb16954591bd17ac1a6cbdf, type: 3}
+  food: {fileID: 366938476}
+  bodyLen: 1
 --- !u!1 &366938476
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 366938478}
   - component: {fileID: 366938477}
+  - component: {fileID: 366938479}
   m_Layer: 0
   m_Name: food
   m_TagString: Untagged
@@ -265,7 +282,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.16620687, g: 0.7830189, b: 0.2017076, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -284,12 +301,25 @@ Transform:
   m_GameObject: {fileID: 366938476}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &366938479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366938476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d67bf993a46134793a0b4fc72ca9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snake: {fileID: 138710013}
 --- !u!1 &596622100
 GameObject:
   m_ObjectHideFlags: 0

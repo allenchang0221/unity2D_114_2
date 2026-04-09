@@ -47,7 +47,7 @@ public class snakeControl : MonoBehaviour
             GameObject bodyCopy = GameObject.Instantiate(body);
             bodyCopy.transform.position = transform.position;
             a = 0;
-            if(-11 < transform.position.x && transform.position.x > 11 || -5 < transform.position.y && transform.position.y > 5)
+            if ((transform.position.x < -11 || transform.position.x > 11) || (transform.position.y < -5 || transform.position.y > 5) || (transform.position - body.transform.position).magnitude < 0.1f)
             {
                 transform.position = new Vector2(0, 0);
                 len.transform.position=new Vector2(1,900);

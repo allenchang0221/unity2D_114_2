@@ -2,51 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class snakeControl : MonoBehaviour
 {
     // Start is called before the first frame update
-    float x = 0, y = 0;
-    public GameObject body,food;
-    public int bodyLen = 1;
+    float x = 0, y = 0,a;
+    public GameObject body,len;
     void Start()
     {
         Application.targetFrameRate = 60;
         x = 0;
         y = 0;
-        bodyLen = 1;
+        a = 0;
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        a++;
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             x = 0;
-            y = 0.1f;
+            y = 0.5f;
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             x = 0;
-            y = -0.1f;
+            y = -0.5f;
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
-            x = 0.1f;
+            x = 0.5f;
             y = 0;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            x = -0.1f;
+            x = -0.5f;
             y = 0;
         }
-        float distance=(transform.position-food.transform.position).magnitude;
-        if (distance <= 0.6)
+        
+
+        
+        if (a >= 5)
         {
-            bodyLen++;
+            transform.Translate(x, y, 0);
+            GameObject bodyCopy = GameObject.Instantiate(body);
+            bodyCopy.transform.position = transform.position;
+            a = 0;
+            if(-11 < transform.position.x && transform.position.x > 11 || -5 < transform.position.y && transform.position.y > 5)
+            {
+                transform.position = new Vector2(0, 0);
+                len.transform.position=new Vector2(1,900);
+            }
         }
-        transform.Translate(x, y, 0);
-        GameObject bodyCopy=GameObject.Instantiate(body);
-        bodyCopy.transform.position = transform.position;
     }
 }
 

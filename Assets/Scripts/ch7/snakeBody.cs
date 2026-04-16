@@ -6,6 +6,7 @@ public class snakeBody : MonoBehaviour
 {
     // Start is called before the first frame update
     int a = 0;
+    float snakeSpeed;
     GameObject len, player;
     void Start()
     {
@@ -18,8 +19,9 @@ public class snakeBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        snakeSpeed = snakeControl.snakeSpeed;
         a++;
-        if (a > 10 && player.transform.position == transform.position)
+        if (a > snakeSpeed && player.transform.position == transform.position)
         {
             player.transform.position = new Vector2(0, 0);
             len.transform.position = new Vector2(1, 900);

@@ -6,6 +6,7 @@ public class snakeControl : MonoBehaviour
 {
     // Start is called before the first frame update
     float x = 0, y = 0,a;
+    public static float snakeSpeed=5;
     public GameObject body,len;
     void Start()
     {
@@ -42,8 +43,9 @@ public class snakeControl : MonoBehaviour
         
 
         
-        if (a >= 5)
+        if (a >= snakeSpeed)
         {
+            snakeSpeed -= 0.002f;
             transform.Translate(x, y, 0);
             GameObject bodyCopy = GameObject.Instantiate(body);
             bodyCopy.transform.position = transform.position;

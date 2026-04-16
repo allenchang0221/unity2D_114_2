@@ -6,18 +6,24 @@ public class snakeBody : MonoBehaviour
 {
     // Start is called before the first frame update
     int a = 0;
-    GameObject len;
+    GameObject len, player;
     void Start()
     {
         Application.targetFrameRate = 60;
         a = 0;
         len = GameObject.Find("len");
+        player = GameObject.Find("snake");
     }
 
     // Update is called once per frame
     void Update()
     {
         a++;
+        if (a > 10 && player.transform.position == transform.position)
+        {
+            player.transform.position = new Vector2(0, 0);
+            len.transform.position = new Vector2(1, 900);
+        }
         if (a >= len.transform.position.x)
         {
             Destroy(gameObject);

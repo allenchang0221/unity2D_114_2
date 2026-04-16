@@ -17,6 +17,7 @@ public class snakeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         a++;
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -47,7 +48,7 @@ public class snakeControl : MonoBehaviour
             GameObject bodyCopy = GameObject.Instantiate(body);
             bodyCopy.transform.position = transform.position;
             a = 0;
-            if ((transform.position.x < -11 || transform.position.x > 11) || (transform.position.y < -5 || transform.position.y > 5) || (transform.position - body.transform.position).magnitude < 0.1f)
+            if ((transform.position.x < -11 || transform.position.x > 11) || (transform.position.y < -5 || transform.position.y > 5))
             {
                 transform.position = new Vector2(0, 0);
                 len.transform.position=new Vector2(1,900);

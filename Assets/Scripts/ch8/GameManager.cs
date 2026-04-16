@@ -1,30 +1,25 @@
-﻿using System.Collections;
+﻿using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
 {
-    [Header("遊戲物件")]
-    [SerializeField] private Ball ballCopy;
+    [SerializeField] private Ball ball;
     [SerializeField] private Paddle playerPaddle;
     [SerializeField] private Paddle computerPaddle;
-
-    [Header("UI 介面")]
     [SerializeField] private Text playerScoreText;
     [SerializeField] private Text computerScoreText;
 
     private int playerScore;
     private int computerScore;
-
     private void Start()
     {
         NewGame();
     }
-
+    public static Ball[] balls=new Ball[2];
     private void Update()
     {
-        // 按下 R 鍵重置遊戲
         if (Input.GetKeyDown(KeyCode.R))
         {
             NewGame();
@@ -33,6 +28,10 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        for(int i = 0; i < 2; i++)
+        {
+            balls[i]=Ball.Instantiate(ball);
+        }
         SetPlayerScore(0);
         SetComputerScore(0);
         NewRound();
@@ -40,30 +39,23 @@ public class GameManager : MonoBehaviour
 
     public void NewRound()
     {
-        // Cancel ongoing delays to prevent double-spawning if NewRound is called rapidly
-        StopAllCoroutines();
-
         playerPaddle.ResetPosition();
         computerPaddle.ResetPosition();
-
         for (int i = 0; i < 2; i++)
         {
-            Ball ball = Instantiate(ballCopy); // Use standard Instantiate
-            ball.ResetPosition();
-
-            // Start a Coroutine instead of Invoke
-            StartCoroutine(StartRoundRoutine(ball, 1f));
+            balls[i].ResetPosition();
         }
+
+        CancelInvoke();
+        Invoke(nameof(StartRound), 1f);
     }
-    // This replaces StartRound and handles the delay
-    private IEnumerator StartRoundRoutine(Ball ball, float delay)
+
+    private void StartRound()
     {
-        yield return new WaitForSeconds(delay);
-        ball.AddStartingForce();
-    }
-    private void StartRound(Ball ball)
-    {
-        ball.AddStartingForce();
+        for (int i = 0; i < 2; i++)
+        {
+            balls[i].AddStartingForce();
+        }
     }
 
     public void OnPlayerScored()
@@ -89,4 +81,5 @@ public class GameManager : MonoBehaviour
         computerScore = score;
         computerScoreText.text = score.ToString();
     }
+
 }

@@ -32,4 +32,5 @@ public class snakeBody : MonoBehaviour
         }
         Debug.Log(len.transform.position.x);
     }
+
 }

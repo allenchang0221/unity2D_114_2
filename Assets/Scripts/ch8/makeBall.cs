@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class makeBall : MonoBehaviour
 {
+    //public static dynamic b;
     public GameObject ball;
     // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < 3; i++) 
         {
-            GameObject.Instantiate(ball);
+            GameObject a=GameObject.Instantiate(ball);
+            //b[i] = a.transform.position.y;
         }
     }
 

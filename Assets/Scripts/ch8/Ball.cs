@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ball : MonoBehaviour
 {
@@ -31,30 +32,35 @@ public class ball : MonoBehaviour
         //}
         mine.text = me.ToString();
         cs.text = c.ToString();
-        if (transform.position.x < -8)
-        {
-            c++;
-            transform.position = new Vector2(0, 0);
-            startGame();
+        if(c>=11||me>=11){
+            SceneManager.LoadScene("PongManager");
         }
-        if (transform.position.x > 8)
+        else
         {
-            me++;
-            transform.position = new Vector2(0, 0);
-            startGame();
+            if (transform.position.x < -8)
+            {
+                c++;
+                transform.position = new Vector2(0, 0);
+                startGame();
+            }
+            if (transform.position.x > 8)
+            {
+                me++;
+                transform.position = new Vector2(0, 0);
+                startGame();
+            }
         }
     }
     void startGame()
     {
         transform.position = new Vector2(0, 0);
-
-        float angle = Random.Range(-0.75f, 0.75f);
-        bool isC = Random.Range(0, 1) == 1;
+        float angle = Random.Range(-45, 45);
+        bool isC = Random.Range(0, 2) == 1;
         if (isC)
         {
-            angle += 1.57f;
+            angle += 180;
         }
-        rb.AddForce(transform.right * Mathf.Cos(angle) * 300);
-        rb.AddForce(transform.up * Mathf.Sin(angle) * 300);
+        rb.AddForce(transform.right * Mathf.Cos(angle * Mathf.Deg2Rad) * 300);
+        rb.AddForce(transform.up * Mathf.Sin(angle * Mathf.Deg2Rad) * 300);
     }
 }

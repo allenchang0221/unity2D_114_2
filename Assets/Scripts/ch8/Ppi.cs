@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Ppi : MonoBehaviour
 {
-    Rigidbody rb;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
         Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            rb.AddForce(transform.up);
+            rb.AddForce(transform.up*10);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            rb.AddForce(-transform.up);
+            rb.AddForce(transform.up*-10);
         }
     }
 }

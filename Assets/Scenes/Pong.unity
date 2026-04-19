@@ -287,13 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7edbdfc9c8b1e94897bb20e672f8881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 0}
-  playerPaddle: {fileID: 0}
-  computerPaddle: {fileID: 0}
-  playerScoreText: {fileID: 0}
-  computerScoreText: {fileID: 0}
-  playerScore: 0
-  computerScore: 0
 --- !u!4 &417150623
 Transform:
   m_ObjectHideFlags: 0
@@ -1083,6 +1076,7 @@ GameObject:
   - component: {fileID: 1362602726}
   - component: {fileID: 1362602728}
   - component: {fileID: 1362602730}
+  - component: {fileID: 1362602731}
   m_Layer: 0
   m_Name: Computer Paddle
   m_TagString: Paddle
@@ -1229,6 +1223,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1362602731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362602725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0bf27df21867440927de98320b0a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439415306
 GameObject:
   m_ObjectHideFlags: 0

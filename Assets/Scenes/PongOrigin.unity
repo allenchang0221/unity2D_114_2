@@ -629,8 +629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b2399eb776bf94e908930cf937f564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mine: {fileID: 1696663820}
-  cs: {fileID: 1248032267}
 --- !u!1 &770617848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0bf27df21867440927de98320b0a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 702247801}
 --- !u!1 &1439415306
 GameObject:
   m_ObjectHideFlags: 0

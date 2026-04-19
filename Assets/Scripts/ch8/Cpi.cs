@@ -5,13 +5,13 @@ using UnityEngine;
 public class Cpi : MonoBehaviour
 {
     Rigidbody2D rb;
-    GameObject ball;
+    public GameObject ball;
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         Application.targetFrameRate = 60;
-        ball = GameObject.Find("Ball");
+        //ball = GameObject.Find("Ball");
         // Update is called once per frame
 
     }

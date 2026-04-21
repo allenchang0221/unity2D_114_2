@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/PongOrigin.unity
+  - enabled: 1
+    path: Assets/Scenes/Pong/PongOrigin.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/ch5.unity
@@ -15,16 +15,22 @@ EditorBuildSettings:
     path: Assets/Scenes/ch6.unity
     guid: 7de4be562ce9144448e84fabcc45fa56
   - enabled: 1
+    path: Assets/Scenes/Pong/(T)PongManyBall.unity
+    guid: 90345cdda38fc02459cac8d346617d32
+  - enabled: 1
     path: Assets/Scenes/ch7.unity
     guid: ab4af1db1d1f85247b6a9f4bd7dee6f6
   - enabled: 1
-    path: Assets/Scenes/PongManager.unity
+    path: Assets/Scenes/Pong/(T)PongOrigin.unity
+    guid: ad076464896dd604985703105ce84146
+  - enabled: 1
+    path: Assets/Scenes/Pong/PongManager.unity
     guid: 35c4ff53b3834a348be75297a93de217
   - enabled: 1
     path: Assets/Scenes/ch5+6.unity
     guid: 407ae6c89d4f0c947987423dfef9f510
   - enabled: 1
-    path: Assets/Scenes/PongManyBall.unity
+    path: Assets/Scenes/Pong/PongManyBall.unity
     guid: 5e38a17b5c93cdc47902a201b473ff85
   - enabled: 1
     path: Assets/Scenes/ch3+4.unity

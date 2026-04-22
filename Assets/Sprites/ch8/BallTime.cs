@@ -37,7 +37,17 @@ public class BallTime : MonoBehaviour
         cs.text = c.ToString();
         if (a>3*60)
         {
-            SceneManager.LoadScene("PongManager");
+            if (c >= 11)
+            {
+                SceneManager.LoadScene("lose");
+                c = me = 0;
+            }
+            else if (me >= 11)
+            {
+                SceneManager.LoadScene("win");
+                c = me = 0;
+
+            }
         }
         else
         {

@@ -35,10 +35,15 @@ public class ball : MonoBehaviour
         //}
         mine.text = me.ToString();
         cs.text = c.ToString();
-        if (c >= 11 || me >= 11)
+        if (c >= 11 )
         {
-            SceneManager.LoadScene("PongManager");
+            SceneManager.LoadScene("lose");
             c =  me = 0;
+        }else if(me >= 11)
+        {
+            SceneManager.LoadScene("win");
+            c = me = 0;
+
         }
         else
         {

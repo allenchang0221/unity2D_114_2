@@ -9,15 +9,18 @@ public class ball : MonoBehaviour
     Rigidbody2D rb;
     Collider2D cd;
     TextMeshProUGUI mine, cs;
+    GameObject MP, CP;
     // Start is called before the first frame update
     void Start()
     {
+        MP = GameObject.Find("Player Paddle");
+        CP = GameObject.Find("Computer Paddle");
         GameObject P = GameObject.Find("Text (TMP)P");
         mine = P.GetComponent<TextMeshProUGUI>();
         GameObject C = GameObject.Find("Text (TMP)C");
         cs = C.GetComponent<TextMeshProUGUI>();
-        rb =this.GetComponent<Rigidbody2D>();
-        cd=this.GetComponent<Collider2D>();
+        rb = this.GetComponent<Rigidbody2D>();
+        cd = this.GetComponent<Collider2D>();
         startGame();
         Application.targetFrameRate = 60;
     }
@@ -32,8 +35,10 @@ public class ball : MonoBehaviour
         //}
         mine.text = me.ToString();
         cs.text = c.ToString();
-        if(c>=11||me>=11){
+        if (c >= 11 || me >= 11)
+        {
             SceneManager.LoadScene("PongManager");
+            c =  me = 0;
         }
         else
         {
@@ -64,3 +69,4 @@ public class ball : MonoBehaviour
         rb.AddForce(transform.up * Mathf.Sin(angle * Mathf.Deg2Rad) * 300);
     }
 }
+

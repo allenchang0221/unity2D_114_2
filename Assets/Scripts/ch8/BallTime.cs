@@ -10,7 +10,7 @@ public class BallTime : MonoBehaviour
     Collider2D cd;
     TextMeshProUGUI mine, cs;
     // Start is called before the first frame update
-    public static int time = 0;
+    int time = 0;
     void Start()
     {
         GameObject P = GameObject.Find("Text (TMP)P");
@@ -41,7 +41,7 @@ public class BallTime : MonoBehaviour
         //} 
         mine.text = me.ToString();
         cs.text = c.ToString();
-        if (time > 3 * 60)
+        if (time > 15 * 60)
         {
             if (c > me)
             {

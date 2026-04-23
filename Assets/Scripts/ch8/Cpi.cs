@@ -25,19 +25,19 @@ public class Cpi : MonoBehaviour
 
         for (int i = 0; i < balls.Length; i++)
         {
-            if (distance < (balls[i].transform.position - transform.position).magnitude)
+            if (distance > (transform.position.x - balls[i].transform.position.x))
             {
-                distance = (balls[i].transform.position - transform.position).magnitude;
+                distance = (transform.position.x - balls[i].transform.position.x);
                 ball = balls[i];
             }
         }
         if (ball.transform.position.y > transform.position.y)
         {
-            rb.AddForce(transform.up * 10);
+            rb.AddForce(transform.up * Random.Range(5, 10));
         }
         if (ball.transform.position.y < transform.position.y)
         {
-            rb.AddForce(transform.up * -10);
+            rb.AddForce(transform.up * Random.Range(5, 10) * -1);
         }
 
     }

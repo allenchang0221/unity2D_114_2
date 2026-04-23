@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b2399eb776bf94e908930cf937f564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  V: {x: 0, y: 0}
 --- !u!1 &770617848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0bf27df21867440927de98320b0a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 702247801}
 --- !u!1 &1439415306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1401,7 @@ Rigidbody2D:
   m_LinearDrag: 2
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: f58b2b86afdb7a445b3c903740a7a94b, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

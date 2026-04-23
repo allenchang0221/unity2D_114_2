@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PongMenu : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static bool  isTime=true,isMany=false;
     void Start()
     {
         
@@ -20,21 +21,25 @@ public class PongMenu : MonoBehaviour
     public void OBS()
     {
         SceneManager.LoadScene("PongOrigin");
-
+        isTime = false;
+        isMany = false;
     }
     public void MBS()
     {
         SceneManager.LoadScene("PongManyBall");
-
+        isTime = false;
+        isMany = true;
     }
     public void OBT()
     {
-        SceneManager.LoadScene("(T)PongOrigin");
-
+        SceneManager.LoadScene("PongOrigin");
+        isTime = true;
+        isMany = false;
     }
     public void MBT()
     {
-        SceneManager.LoadScene("(T)PongManyBall");
-
+        SceneManager.LoadScene("PongManyBall");
+        isTime = true;
+        
     }
 }

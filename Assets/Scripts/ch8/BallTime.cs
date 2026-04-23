@@ -41,14 +41,31 @@ public class BallTime : MonoBehaviour
         //} 
         mine.text = me.ToString();
         cs.text = c.ToString();
-        if (time > 15 * 60)
+        if (PongMenu.isTime)
         {
-            if (c > me)
+            if (time > 5 * 60)
+            {
+                if (c > me)
+                {
+                    SceneManager.LoadScene("lose");
+                    c = me = 0;
+                }
+                else if (me > c)
+                {
+                    SceneManager.LoadScene("win");
+                    c = me = 0;
+
+                }
+            }
+        }
+        else
+        {
+            if (c >= 11)
             {
                 SceneManager.LoadScene("lose");
                 c = me = 0;
             }
-            else if (me > c)
+            else if (me >= 11)
             {
                 SceneManager.LoadScene("win");
                 c = me = 0;

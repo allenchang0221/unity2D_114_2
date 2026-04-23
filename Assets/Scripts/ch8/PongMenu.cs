@@ -20,26 +20,27 @@ public class PongMenu : MonoBehaviour
 
     public void OBS()
     {
-        SceneManager.LoadScene("PongOrigin");
+        SceneManager.LoadScene("Pong");
         isTime = false;
         isMany = false;
     }
     public void MBS()
     {
-        SceneManager.LoadScene("PongManyBall");
+        SceneManager.LoadScene("Pong");
         isTime = false;
         isMany = true;
     }
     public void OBT()
     {
-        SceneManager.LoadScene("PongOrigin");
+        SceneManager.LoadScene("Pong");
         isTime = true;
         isMany = false;
     }
     public void MBT()
     {
-        SceneManager.LoadScene("PongManyBall");
+        SceneManager.LoadScene("Pong");
         isTime = true;
-        
+        isMany = true;
+
     }
 }

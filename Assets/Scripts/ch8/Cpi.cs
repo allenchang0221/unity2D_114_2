@@ -5,10 +5,13 @@ using UnityEngine;
 public class Cpi : MonoBehaviour
 {
     Rigidbody2D rb;
-    public GameObject ball;
+    //public GameObject ball;
+    GameObject[] balls;
+
     // Start is called before the first frame update
     void Start()
     {
+        balls = GameObject.FindGameObjectsWithTag("Ball");
         rb = this.GetComponent<Rigidbody2D>();
         Application.targetFrameRate = 60;
         //ball = GameObject.Find("Ball");
@@ -17,6 +20,17 @@ public class Cpi : MonoBehaviour
     }
     void Update()
     {
+        GameObject ball = balls[0];
+        float distance = 1000;
+
+        for (int i = 0; i < balls.Length; i++)
+        {
+            if (distance < (balls[i].transform.position - transform.position).magnitude)
+            {
+                distance = (balls[i].transform.position - transform.position).magnitude;
+                ball = balls[i];
+            }
+        }
         if (ball.transform.position.y > transform.position.y)
         {
             rb.AddForce(transform.up * 10);
@@ -25,5 +39,6 @@ public class Cpi : MonoBehaviour
         {
             rb.AddForce(transform.up * -10);
         }
+
     }
 }

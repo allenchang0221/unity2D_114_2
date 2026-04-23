@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Pong/PongManager.unity
     guid: 35c4ff53b3834a348be75297a93de217
   - enabled: 1
+    path: Assets/Scenes/Pong/lose.unity
+    guid: c738f10f2f8678c4699d4e081b40422c
+  - enabled: 1
+    path: Assets/Scenes/Pong/win.unity
+    guid: c628c2953a4c7364d9e82607f465053d
+  - enabled: 1
     path: Assets/Scenes/ch5+6.unity
     guid: 407ae6c89d4f0c947987423dfef9f510
   - enabled: 1

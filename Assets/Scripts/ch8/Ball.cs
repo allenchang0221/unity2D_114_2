@@ -64,7 +64,7 @@ public class ball : MonoBehaviour
     void startGame()
     {
         transform.position = new Vector2(0, 0);
-        float angle = Random.Range(-45, 45);
+        float angle = Random.Range(45, 135);
         bool isC = Random.Range(0, 2) == 1;
         if (isC)
         {

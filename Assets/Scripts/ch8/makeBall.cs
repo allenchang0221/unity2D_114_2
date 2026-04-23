@@ -9,7 +9,7 @@ public class makeBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 3; i++) 
+        for (int i = 0; i < 30; i++) 
         {
             GameObject a=GameObject.Instantiate(ball);
             //b[i] = a.transform.position.y;

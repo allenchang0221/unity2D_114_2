@@ -17,13 +17,6 @@ public class Ppi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            rb.AddForce(transform.up*10);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            rb.AddForce(transform.up*-10);
-        }
+        transform.position = new Vector2(transform.position.x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
     }
 }

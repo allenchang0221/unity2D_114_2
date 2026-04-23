@@ -28,7 +28,7 @@ public class BallTime : MonoBehaviour
     void Update()
     {
 
-        float ballLookAt = Mathf.Atan(transform.eulerAngles.y / transform.position.x) * Mathf.Rad2Deg;
+        float ballLookAt = Mathf.Atan2(transform.eulerAngles.y, transform.position.x) * Mathf.Rad2Deg;
         if ((ballLookAt > 45f && ballLookAt < 135f) || (ballLookAt > 225f && ballLookAt < 315f))
         {
             startGame();

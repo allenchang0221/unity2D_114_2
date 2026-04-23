@@ -31,6 +31,7 @@ public class ball : MonoBehaviour
     void Update()
     {
         float ballLookAt = Mathf.Atan(transform.eulerAngles.y / transform.position.x) * Mathf.Rad2Deg;
+        Debug.Log(ballLookAt);
         if (( ballLookAt > 45f && ballLookAt <135f) || (ballLookAt > 225f && ballLookAt < 315f))
         {
             startGame();

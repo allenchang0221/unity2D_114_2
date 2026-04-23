@@ -89,6 +89,7 @@ public class ball : MonoBehaviour
 
     void startGame()
     {
+        rb.velocity = Vector3.zero;
         transform.position = new Vector2(0, 0);
         float angle = Random.Range(135, 225);
         bool isC = Random.Range(0, 2) == 1;

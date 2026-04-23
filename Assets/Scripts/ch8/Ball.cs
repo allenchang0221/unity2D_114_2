@@ -30,7 +30,7 @@ public class ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float ballLookAt = Mathf.Atan(transform.eulerAngles.y / transform.position.x) * Mathf.Rad2Deg;
+        float ballLookAt = Mathf.Atan2(transform.eulerAngles.y, transform.position.x) * Mathf.Rad2Deg;
         Debug.Log(ballLookAt);
         if (( ballLookAt > 45f && ballLookAt <135f) || (ballLookAt > 225f && ballLookAt < 315f))
         {

@@ -33,6 +33,10 @@ public class PongMenu : MonoBehaviour
         MS.onValueChanged.AddListener(delegate {
             ToggleValueChanged(MS);
         });
+        // Add listener for when the state changes
+        TS.onValueChanged.AddListener(delegate {
+            ToggleValueChanged(TS);
+        });
     }
 
     public void OBS()

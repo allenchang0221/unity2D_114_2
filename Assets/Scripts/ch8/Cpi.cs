@@ -33,12 +33,12 @@ public class Cpi : MonoBehaviour
         }
         if (ball.transform.position.y > transform.position.y)
         {
-            rb.AddForce(transform.up * Random.Range(5, 10));
+            rb.AddForce(transform.up * Random.Range(15, 10));
         }
         if (ball.transform.position.y < transform.position.y)
         {
-            rb.AddForce(transform.up * Random.Range(5, 10) * -1);
+            rb.AddForce(transform.up * Random.Range(15, 10) * -1);
         }
-
+        //transform.position=new Vector2(transform.position.x, ball.transform.position.y);
     }
 }

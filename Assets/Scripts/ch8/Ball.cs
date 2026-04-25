@@ -9,7 +9,7 @@ public class ball : MonoBehaviour
 {
     Rigidbody2D rb;
     Collider2D cd;
-    TextMeshProUGUI mine, cs;
+    TextMeshProUGUI mine, cs, timeLeft;
     // Start is called before the first frame update
     int time = 0;
     void Start()
@@ -18,6 +18,8 @@ public class ball : MonoBehaviour
         mine = P.GetComponent<TextMeshProUGUI>();
         GameObject C = GameObject.Find("Text (TMP)C");
         cs = C.GetComponent<TextMeshProUGUI>();
+        GameObject T = GameObject.Find("timeLeft");
+        timeLeft = T.GetComponent<TextMeshProUGUI>();
         rb = this.GetComponent<Rigidbody2D>();
         cd = this.GetComponent<Collider2D>();
         startGame();
@@ -35,6 +37,15 @@ public class ball : MonoBehaviour
             startGame();
         }
         time++;
+        if (PongMenu.isTime)
+        {
+
+            timeLeft.text = (time / 60) + "s";
+        }
+        else
+        {
+            timeLeft.text = "";
+        }
         //if (cd.gameObject.CompareTag("Paddle"))
         //{
         //    rb.AddForce(transform.up * rb.velocity.y*100);
@@ -44,7 +55,7 @@ public class ball : MonoBehaviour
         cs.text = c.ToString();
         if (PongMenu.isTime)
         {
-            if (time > 5 * 60)
+            if (time > 15 * 60)
             {
                 if (c > me)
                 {

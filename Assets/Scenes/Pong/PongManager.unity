@@ -878,7 +878,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1777636308}
+        m_TargetAssemblyTypeName: PongMenu, Assembly-CSharp
+        m_MethodName: ToggleValueChanged
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1437849456}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1505648963
 GameObject:
@@ -1137,6 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TS: {fileID: 1437849456}
+  ballNumSlider: {fileID: 1961276910}
 --- !u!1 &1932372485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,13 +1301,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 752037057}
   m_HandleRect: {fileID: 1126226318}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_MinValue: 1
+  m_MaxValue: 10
+  m_WholeNumbers: 1
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1777636308}
+        m_TargetAssemblyTypeName: PongMenu, Assembly-CSharp
+        m_MethodName: SliderValueChanged
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1961276910}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1985643370
 GameObject:
   m_ObjectHideFlags: 0

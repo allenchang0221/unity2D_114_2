@@ -9,17 +9,11 @@ public class makeBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(PongMenu.isMany){for (int i = 0; i < 3; i++)
+        for (int i = 0; i < PongMenu.ballNums; i++)
             {
                 GameObject a = GameObject.Instantiate(ball);
                 //b[i] = a.transform.position.y;
             }
-        }
-        else
-        {
-            GameObject a = GameObject.Instantiate(ball);
-
-        }
     }
 
     // Update is called once per frame

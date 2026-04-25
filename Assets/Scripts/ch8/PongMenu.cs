@@ -7,25 +7,28 @@ using UnityEngine.UI;
 public class PongMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static bool isTime=true,isMany=false;
+    public static bool isTime=true;
+    public static int ballNums=1;
     public Toggle TS;
+    public Slider ballNumSlider;
     void Start()
     {
+        Application.targetFrameRate = 60;
     }
 
-    void ToggleValueChanged(Toggle change)
+    public void ToggleValueChanged(Toggle change)
     {
         isTime = change.isOn;
+    }
+    public void SliderValueChanged(Slider change)
+    {
+        ballNums = int.Parse((change.value).ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        // Add listener for when the state changes
-        TS.onValueChanged.AddListener(delegate {
-            ToggleValueChanged(TS);
-        });
     }
 
     public void startGame()

@@ -22,7 +22,6 @@ public class Cpi : MonoBehaviour
     {
         GameObject ball = balls[0];
         float distance = 1000;
-
         for (int i = 0; i < balls.Length; i++)
         {
             if (distance > (transform.position.x - balls[i].transform.position.x))

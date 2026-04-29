@@ -18,5 +18,14 @@ public class Ppi : MonoBehaviour
     void Update()
     {
         transform.position = new Vector2(transform.position.x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        Debug.Log(transform.eulerAngles.z);
+        if (Input.GetKey(KeyCode.UpArrow) && transform.eulerAngles.z < 45)
+        {
+            transform.Rotate(0, 0, 1);
+        }
+        if (Input.GetKey(KeyCode.DownArrow) && transform.eulerAngles.z > -45)
+        {
+            transform.Rotate(0, 0, -1);
+        }
     }
 }

@@ -29,14 +29,22 @@ public class Cpi : MonoBehaviour
                 ball = balls[i];
             }
         }
-        if (ball.transform.position.y > transform.position.y)
+        if (PongMenu.isSuper)
         {
-            rb.AddForce(transform.up * Random.Range(15, 10));
+
+            transform.position = new Vector2(transform.position.x, ball.transform.position.y);
+            
         }
-        if (ball.transform.position.y < transform.position.y)
+        else
         {
-            rb.AddForce(transform.up * Random.Range(15, 10) * -1);
+            if (ball.transform.position.y > transform.position.y)
+            {
+                rb.AddForce(transform.up * Random.Range(15, 10));
+            }
+            if (ball.transform.position.y < transform.position.y)
+            {
+                rb.AddForce(transform.up * Random.Range(15, 10) * -1);
+            }
         }
-        //transform.position=new Vector2(transform.position.x, ball.transform.position.y);
     }
 }

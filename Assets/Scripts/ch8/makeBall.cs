@@ -8,7 +8,7 @@ public class makeBall : MonoBehaviour
 
     public GameObject ballCopy, Block, Brick;
     GameObject b;
-    GameObject[] bk = new GameObject[2];
+    GameObject[] bk = new GameObject[10];
     int a = 0;
     // Start is called before the first frame update
     void Start()
@@ -27,13 +27,21 @@ public class makeBall : MonoBehaviour
         }
         if (PongMenu.isBrick)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < bk.Length; i++)
             {
                 bk[i] = GameObject.Instantiate(Brick);
                 bk[i].transform.position = new Vector2(Random.Range(5, -5), Random.Range(-3, 3));
+                if (i % 2 == 0)
+                {
+                    bk[i].GetComponent<Renderer>().material.color = Color.green;
+
+                }
+                else
+                {
+                    bk[i].GetComponent<Renderer>().material.color = Color.red;
+
+                }
             }
-            bk[0].GetComponent<Renderer>().material.color = Color.green;
-            bk[1].GetComponent<Renderer>().material.color = Color.red;
             //b.transform.position=new Vector2 (0,0);
         }
         Application.targetFrameRate = 60;

@@ -28,7 +28,7 @@ public class ball : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("物理引擎偵測到碰撞了！");
+        //Debug.Log("物理引擎偵測到碰撞了！");
         if (collision.gameObject.CompareTag("Brick"))
         {
             if (collision.gameObject.GetComponent<Renderer>().material.color == Color.green)

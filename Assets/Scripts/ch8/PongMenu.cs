@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class PongMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static bool isTime=true,isBlock=true, isBrick=true;
+    public static bool isTime= false, isBlock= false, isBrick=false,isSuper=false;
     public static int ballNums=1;
-    public Toggle TS,BS;
+    public Toggle TS,BS,BKS,SUS;
     public Slider ballNumSlider;
     public TextMeshProUGUI showLT;
     void Start()
@@ -18,6 +18,8 @@ public class PongMenu : MonoBehaviour
         Application.targetFrameRate = 60;
         TS.isOn=isTime;
         BS.isOn=isBlock;
+        BKS.isOn=isBrick;
+        SUS.isOn=isSuper;
         ballNumSlider.value=ballNums;
         showLT.text = "Ball number : " +ballNums.ToString();
     }
@@ -25,6 +27,10 @@ public class PongMenu : MonoBehaviour
     public void ToggleValueChanged(Toggle change)
     {
         isTime = change.isOn;
+    }
+    public void superToggleValueChanged(Toggle change)
+    {
+        isSuper = change.isOn;
     }
     public void BrickToggleValueChanged(Toggle change)
     {

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class makeBall : MonoBehaviour
 {
-    //public static dynamic b;
     public GameObject ballCopy, Block, Brick;
     GameObject b;
     GameObject[] bk = new GameObject[2];

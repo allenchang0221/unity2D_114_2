@@ -9,6 +9,7 @@ public class ball : MonoBehaviour
 {
     Rigidbody2D rb;
     TextMeshProUGUI mine, cs, timeLeft;
+    Collider2D cd;
     public static int c = 0, me = 0;
     // Start is called before the first frame update
     int time = 0;
@@ -25,11 +26,27 @@ public class ball : MonoBehaviour
         time = 0;
         Application.targetFrameRate = 60;
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("物理引擎偵測到碰撞了！");
+        if (collision.gameObject.CompareTag("Brick"))
+        {
+            if (collision.gameObject.GetComponent<Renderer>().material.color == Color.green)
+            {
+                me++;
+            }
+            else
+            {
+
+                c++;
+            }
+            //Destory(collision.gameObject);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
 
-        float ballLookAt = Mathf.Atan2(transform.eulerAngles.y, transform.position.x) * Mathf.Rad2Deg;
         if (Mathf.Abs(transform.position.y) > 6)
         {
             if (transform.position.x > 0)
@@ -40,14 +57,14 @@ public class ball : MonoBehaviour
             {
                 c++;
             }
-                startRound();
+            startRound();
         }
         time++;
         if (PongMenu.isTime)
         {
             if (time < 15 * 60)
             {
-                timeLeft.text = (14 - time / 60)+"."+(100-(time%60)*100/60) + "s";
+                timeLeft.text = (14 - time / 60) + "." + (100 - (time % 60) * 100 / 60) + "s";
             }
             else
             {
@@ -109,8 +126,8 @@ public class ball : MonoBehaviour
             transform.position = new Vector2(0, 0);
             startRound();
         }
-    }
 
+    }
     void startRound()
     {
         rb.velocity = Vector3.zero;
@@ -125,4 +142,5 @@ public class ball : MonoBehaviour
         rb.AddForce(F * 300);
     }
 }
+
 

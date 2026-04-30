@@ -6,7 +6,7 @@ using UnityEngine;
 public class makeBall : MonoBehaviour
 {
     //public static dynamic b;
-    public GameObject ballCopy, Block;
+    public GameObject ballCopy, Block, Brick;
     GameObject b;
     GameObject[] bk = new GameObject[2];
     int a = 0;
@@ -25,17 +25,17 @@ public class makeBall : MonoBehaviour
             b.transform.position = new Vector2(Random.Range(5, -5), Random.Range(-3, 3));
             //b.transform.position=new Vector2 (0,0);
         }
-        //if (PongMenu.isBrick)
-        //{
-        //    for (int i = 0; i < 2; i++)
-        //    {
-        //        bk[i] = GameObject.Instantiate(Block);
-        //        bk[i].transform.position = new Vector2(Random.Range(5, -5), Random.Range(-3, 3));
-        //    }
-        //    bk[0].GetComponent<Renderer>().material.color = Color.green;
-        //    bk[1].GetComponent<Renderer>().material.color = Color.red;
-        //    //b.transform.position=new Vector2 (0,0);
-        //}
+        if (PongMenu.isBrick)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                bk[i] = GameObject.Instantiate(Brick);
+                bk[i].transform.position = new Vector2(Random.Range(5, -5), Random.Range(-3, 3));
+            }
+            bk[0].GetComponent<Renderer>().material.color = Color.green;
+            bk[1].GetComponent<Renderer>().material.color = Color.red;
+            //b.transform.position=new Vector2 (0,0);
+        }
         Application.targetFrameRate = 60;
     }
 
@@ -52,22 +52,20 @@ public class makeBall : MonoBehaviour
         //{
         //    for (int i = 0; i < 2; i++)
         //    {
-        //        if (bk[i] != null)
+        //        Collision2D cd = bk[i].GetComponent<Collision2D>();
+        //        if (cd.gameObject.CompareTag("Ball"))
         //        {
-        //            Collider2D cd = bk[i].GetComponent<Collider2D>();
-        //            if (cd.gameObject.CompareTag("Ball"))
+        //            if (i == 0)
         //            {
-        //                if (i == 0)
-        //                {
-        //                    ball.me++;
-        //                }
-        //                else
-        //                {
-        //                    ball.c++;
-        //                }
-        //                Destroy(bk[i]);
+        //                ball.me++;
         //            }
+        //            else
+        //            {
+        //                ball.c++;
+        //            }
+        //            Destroy(bk[i]);
         //        }
+
         //    }
         //}
 

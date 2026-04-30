@@ -304,6 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballCopy: {fileID: 4736217034684539977, guid: 62a5fb7f254d11944a647c9686a042bc, type: 3}
   Block: {fileID: 2286431269845318958, guid: 331c0366b55659b458a7e00336c559a3, type: 3}
+  Brick: {fileID: 2286431269845318958, guid: ce29537e03fad64498f851a64ce21f6c, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

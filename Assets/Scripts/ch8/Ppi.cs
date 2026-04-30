@@ -23,7 +23,7 @@ public class Ppi : MonoBehaviour
         {
             transform.Rotate(0, 0, 1);
         }
-        if (Input.GetKey(KeyCode.DownArrow) && transform.eulerAngles.z > -45)
+        if (Input.GetKey(KeyCode.DownArrow) && !(transform.eulerAngles.z < 315) )
         {
             transform.Rotate(0, 0, -1);
         }

@@ -22,7 +22,7 @@ public class ball : MonoBehaviour
         timeLeft = T.GetComponent<TextMeshProUGUI>();
         rb = this.GetComponent<Rigidbody2D>();
         cd = this.GetComponent<Collider2D>();
-        startGame();
+        startRound();
         time = 0;
         Application.targetFrameRate = 60;
     }
@@ -32,15 +32,22 @@ public class ball : MonoBehaviour
     {
 
         float ballLookAt = Mathf.Atan2(transform.eulerAngles.y, transform.position.x) * Mathf.Rad2Deg;
-        if ((ballLookAt > 45f && ballLookAt < 135f) || (ballLookAt > 225f && ballLookAt < 315f))
+        if (Mathf.Abs(transform.position.y) > 6)
         {
-            startGame();
+            startRound();
         }
         time++;
         if (PongMenu.isTime)
         {
-
-            timeLeft.text = (time / 60) + "s";
+            if (time < 15 * 60)
+            {
+                timeLeft.text = (14 - time / 60)+"."+(100-(time%60)*100/60) + "s";
+            }
+            else
+            {
+                timeLeft.color = Color.red;
+                timeLeft.text = "0.00s";
+            }
         }
         else
         {
@@ -88,17 +95,17 @@ public class ball : MonoBehaviour
         {
             c++;
             transform.position = new Vector2(0, 0);
-            startGame();
+            startRound();
         }
         if (transform.position.x > 8)
         {
             me++;
             transform.position = new Vector2(0, 0);
-            startGame();
+            startRound();
         }
     }
 
-    void startGame()
+    void startRound()
     {
         rb.velocity = Vector3.zero;
         transform.position = new Vector2(0, 0);

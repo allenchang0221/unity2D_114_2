@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137b74d9ae27ea945b92bc07874e1ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 4736217034684539977, guid: 62a5fb7f254d11944a647c9686a042bc, type: 3}
+  ballCopy: {fileID: 4736217034684539977, guid: 62a5fb7f254d11944a647c9686a042bc, type: 3}
   Block: {fileID: 2286431269845318958, guid: 331c0366b55659b458a7e00336c559a3, type: 3}
 --- !u!1 &519420028
 GameObject:

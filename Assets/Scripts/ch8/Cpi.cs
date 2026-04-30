@@ -14,7 +14,6 @@ public class Cpi : MonoBehaviour
         balls = GameObject.FindGameObjectsWithTag("Ball");
         rb = this.GetComponent<Rigidbody2D>();
         Application.targetFrameRate = 60;
-        //ball = GameObject.Find("Ball");
         // Update is called once per frame
 
     }

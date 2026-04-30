@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PongMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static bool isTime=true,isBlock=true;
+    public static bool isTime=true,isBlock=true, isBrick=true;
     public static int ballNums=1;
     public Toggle TS,BS;
     public Slider ballNumSlider;
@@ -19,12 +19,16 @@ public class PongMenu : MonoBehaviour
         TS.isOn=isTime;
         BS.isOn=isBlock;
         ballNumSlider.value=ballNums;
-        showLT.text = "limmit time : " +ballNums.ToString();
+        showLT.text = "Ball number : " +ballNums.ToString();
     }
 
     public void ToggleValueChanged(Toggle change)
     {
         isTime = change.isOn;
+    }
+    public void BrickToggleValueChanged(Toggle change)
+    {
+        isBrick = change.isOn;
     }
     public void BlockToggleValueChanged(Toggle change)
     {
@@ -33,7 +37,7 @@ public class PongMenu : MonoBehaviour
     public void SliderValueChanged(Slider change)
     {
         ballNums = int.Parse((change.value).ToString());
-        showLT.text="limmit time : "+ballNums.ToString();
+        showLT.text= "Ball number : " + ballNums.ToString();
     }
 
     // Update is called once per frame

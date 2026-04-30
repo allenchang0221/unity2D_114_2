@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class ball : MonoBehaviour
 {
     Rigidbody2D rb;
-    Collider2D cd;
     TextMeshProUGUI mine, cs, timeLeft;
+    public static int c = 0, me = 0;
     // Start is called before the first frame update
     int time = 0;
     void Start()
@@ -21,12 +21,10 @@ public class ball : MonoBehaviour
         GameObject T = GameObject.Find("timeLeft");
         timeLeft = T.GetComponent<TextMeshProUGUI>();
         rb = this.GetComponent<Rigidbody2D>();
-        cd = this.GetComponent<Collider2D>();
         startRound();
         time = 0;
         Application.targetFrameRate = 60;
     }
-    public static int c = 0, me = 0;
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +32,15 @@ public class ball : MonoBehaviour
         float ballLookAt = Mathf.Atan2(transform.eulerAngles.y, transform.position.x) * Mathf.Rad2Deg;
         if (Mathf.Abs(transform.position.y) > 6)
         {
-            startRound();
+            if (transform.position.x > 0)
+            {
+                me++;
+            }
+            else
+            {
+                c++;
+            }
+                startRound();
         }
         time++;
         if (PongMenu.isTime)
